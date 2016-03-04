@@ -1,2 +1,2 @@
 # Test
-For testing Git features
+For testing New features
