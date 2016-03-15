@@ -14,10 +14,18 @@
 	padding: 10px;
 }
 
-.button-widget {
+.button-one {
 	margin-top: 30px;
 	width: 100px;
 	height: 50px;
+}
+
+.button-one.green {
+	background-color:green;
+}
+
+.button-one.blue {
+	background-color:blue;
 }
 
 .info-widget {
@@ -27,7 +35,10 @@
 	width: 50%;
 }
 
-.button-one {
-	width: 100px;
-	height: 50px;
+.info-widget.important {
+	font-weight: bold;
+}
+
+.info-widget.deleted {
+	text-decoration: line-through;
 }
