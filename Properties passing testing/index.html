@@ -1,30 +1,42 @@
 <!doctype html>
 <html ng-app="testApp">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
   </head>
-  <body>
-    <h2>Testing page for RTL features</h2>
-    <div ng-controller="RTLController">
+  <body ng-controller="MyController">
+    <h2>Tool box options features testing</h2>
 
-      <div class="row viewzone">
-        <div class="col-xs-4 first-{{direction}}">
-          Hi
-        </div>
-        <div class="col-xs-4 second-{{direction}}">
-          Dear
-        </div>
-        <div class="col-xs-4 third-{{direction}}">
-          Friends
-        </div>
+    <div class="main-area">
+      
+      <p>{{mode}}</p>
+      <button ng-click="switchMode()">Switch mode</button>
+
+      <div class="button-widget">
+        <button class="button-one" ng-click="buttonOneClicked()">BUTTON</button>
       </div>
 
-      <!-- <button type="button" onclick="RTLController.changeStyle()">Click me to change the style</button> -->
-      <button ng-click="changeStyle()">Click me to change the style</button>
+      <div class="info-widget">
+        <p>Information goes here...</p>
+      </div>
+      
     </div>
+
+    <div class="settings-area">
+      <p>Settings goes here...</p>
+
+      <!-- <p class="button-one-settings"></p> -->
+
+      <!-- <script type="text/ng-template" id="buttonOneSettingsTemplate.html">
+        Button one settings goes here... but this is just hardcoded
+      </script> -->
+      
+      <p ng-include="settingsTemplate" scope="" onload=""></p>
+        
+    </div>
+
   </body>
 </html>
