@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="testApp">
+	<p>Widget settings</p>
+	Font style:	
+	<form name="myForm" ng-controller="MyController">
+	  <label>
+	    <input type="radio" ng-model="$parent.settings.fontStyle" value="default">
+	    Default
+	  </label><br/>
+	  <label>
+	    <input type="radio" ng-model="$parent.settings.fontStyle" value="important">
+	    Important
+	  </label><br/>
+	  <label>
+	    <input type="radio" ng-model="$parent.settings.fontStyle" value="deleted">
+	    Deleted
+	  </label><br/>
+	  <tt>Font style = {{$parent.settings.fontStyle}}</tt><br/>
+	</form>
+</html>
