@@ -54,6 +54,6 @@ myApp.controller('SecondController', function($scope, myFactoryService) {
 
     $scope.rslt.templateName = "";
     $scope.rslt.color = "default";
-    $scope.rslt.fontStle = "default";
+    $scope.rslt.fontStyle = "default";
 
 });
