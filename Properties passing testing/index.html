@@ -1,5 +1,5 @@
 <!doctype html>
-<html ng-app="testApp">
+<html ng-app="myApp">
   
   <head>
     <meta charset="utf-8">
@@ -12,7 +12,7 @@
   <body>
     <h2>Tool box options features testing</h2>
 
-    <div class="main-area" ng-controller="MyController">    
+    <div class="main-area" ng-controller="FirstController">    
       <p>{{mode}}</p>
       <button ng-click="switchMode()">Switch mode</button>
 
@@ -25,14 +25,16 @@
       </div> 
     </div>
 
-    <div class="settings-area">
+    <div class="settings-area" ng-controller="SecondController">
       <p>Settings goes here...</p>
+
+      <!-- {{rslt.templateName}} -->
 
       <!-- <script type="text/ng-template" id="buttonOneSettingsTemplate.html">
         Button one settings goes here... but this is just hardcoded
       </script> -->
       
-      <p ng-include="settingsTemplate" scope="" onload=""></p>
+      <p ng-include="rslt.templateName" scope="" onload=""></p>
     </div>
 
   </body>

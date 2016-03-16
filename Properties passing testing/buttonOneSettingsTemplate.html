@@ -1,21 +1,21 @@
 <!doctype html>
-<html ng-app="testApp">
+<html ng-controller="SecondController">
 	<p>Button one settings</p>
 	Color:	
-	<form name="myForm" ng-controller="MyController">
+	<form name="myForm">
 	  <label>
-	    <input type="radio" ng-model="$parent.settings.color" value="default">
+	    <input type="radio" ng-model="rslt.color" value="default">
 	    Default
 	  </label><br/>
 	  <label>
-	    <input type="radio" ng-model="$parent.settings.color" value="green">
+	    <input type="radio" ng-model="rslt.color" value="green">
 	    Green
 	  </label><br/>
 	  <label>
-	    <input type="radio" ng-model="$parent.settings.color" value="blue">
+	    <input type="radio" ng-model="rslt.color" value="blue">
 	    Blue
 	  </label><br/>
-	  <tt>Color = {{$parent.settings.color}}</tt><br/>
+	  <tt>Color = {{rslt.color}}</tt><br/>
 	</form>
 </html>
 

@@ -1,56 +1,94 @@
-angular.module('testApp', [])
-  .controller('MyController', ['$scope', 'name' function($scope, name) {
+// angular.module('myApp', [])
+//   .controller('MyController', ['$scope', 'name' function($scope, name) {
     
+//     $scope.mode = "Normal mode";
+//     $scope.settingsTemplate = "";
+//     $scope.settings = {
+//       color: "default",
+//       fontStyle: ""
+//     };
+    
+//     $scope.switchMode = function() {
+//       if ($scope.mode == "Normal mode") {
+//         $scope.mode = "Edit properties mode";
+//       } else {
+//         $scope.mode = "Normal mode";
+//         $scope.settingsTemplate = "";
+//       }
+//     };
+
+//     $scope.buttonOneClicked = function() {
+//       if ($scope.mode == "Normal mode") {
+//         alert("Hello World");
+//       } else {
+//         $scope.settingsTemplate = "buttonOneSettingsTemplate.html";
+//       }
+//     };
+
+//     $scope.infoWidgetClicked = function() {
+//       if ($scope.mode == "Edit properties mode") {
+//         $scope.settingsTemplate = "infoWidgetSettingsTemplate.html";
+//       }
+//     };
+
+//   }]);
+
+var myApp = angular.module("myApp", []);
+
+myApp.factory('myFactoryService', function() {
+
+    var data = {}
+      
+    return {
+        setData: function(passedData) {
+          for (var field in passedData) {
+              data[field] = passedData[field];
+          }
+        },
+
+        getData: function() {
+            return data;
+        }
+    }
+});
+
+
+myApp.controller('FirstController', function($scope, myFactoryService) {
+      
     $scope.mode = "Normal mode";
-    $scope.settingsTemplate = "";
-    $scope.settings = {
-      color: "default",
-      fontStyle: ""
-    };
-    //   font-style: "deleted"
-    // };
-    
+
+    $scope.settings = myFactoryService.getData();
+
     $scope.switchMode = function() {
       if ($scope.mode == "Normal mode") {
         $scope.mode = "Edit properties mode";
       } else {
         $scope.mode = "Normal mode";
-        $scope.settingsTemplate = "";
+        $scope.settings.templateName = "";
       }
-    };
+    }
 
     $scope.buttonOneClicked = function() {
       if ($scope.mode == "Normal mode") {
         alert("Hello World");
       } else {
-        $scope.settingsTemplate = "buttonOneSettingsTemplate.html";
-        // var settings = document.getElementsByClassName("button-one-settings")[0]; 
-        // var result = angular.element(settings);
-        // result.text("");
-        // result.append("Hello");
+        myFactoryService.setData({templateName: "buttonOneSettingsTemplate.html"});
       }
-    };
+    }
 
     $scope.infoWidgetClicked = function() {
       if ($scope.mode == "Edit properties mode") {
-        $scope.settingsTemplate = "infoWidgetSettingsTemplate.html";
-        // var settings = document.getElementsByClassName("button-one-settings")[0]; 
-        // var result = angular.element(settings);
-        // result.text("");
-        // result.append("Hello");
+        myFactoryService.setData({templateName: "infoWidgetSettingsTemplate.html"});
       }
-    };
-
-  }])
-  .service('name', ['', function(){
-    var test ={};
-
-    this.getData = function() {
-      return test;
     }
-    
-    this.setdata = function(newVal) {
-      test = newVal;
-    }
-  }])
+});
 
+myApp.controller('SecondController', function($scope, myFactoryService) {
+
+    $scope.rslt = myFactoryService.getData();
+
+    $scope.rslt.templateName = "";
+    $scope.rslt.color = "default";
+    $scope.rslt.fontStle = "default";
+
+});
