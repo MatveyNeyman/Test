@@ -1,38 +1,3 @@
-// angular.module('myApp', [])
-//   .controller('MyController', ['$scope', 'name' function($scope, name) {
-    
-//     $scope.mode = "Normal mode";
-//     $scope.settingsTemplate = "";
-//     $scope.settings = {
-//       color: "default",
-//       fontStyle: ""
-//     };
-    
-//     $scope.switchMode = function() {
-//       if ($scope.mode == "Normal mode") {
-//         $scope.mode = "Edit properties mode";
-//       } else {
-//         $scope.mode = "Normal mode";
-//         $scope.settingsTemplate = "";
-//       }
-//     };
-
-//     $scope.buttonOneClicked = function() {
-//       if ($scope.mode == "Normal mode") {
-//         alert("Hello World");
-//       } else {
-//         $scope.settingsTemplate = "buttonOneSettingsTemplate.html";
-//       }
-//     };
-
-//     $scope.infoWidgetClicked = function() {
-//       if ($scope.mode == "Edit properties mode") {
-//         $scope.settingsTemplate = "infoWidgetSettingsTemplate.html";
-//       }
-//     };
-
-//   }]);
-
 var myApp = angular.module("myApp", []);
 
 myApp.factory('myFactoryService', function() {
