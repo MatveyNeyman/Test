@@ -9,23 +9,27 @@
     <link rel="stylesheet" href="style.css">
   </head>
 
-  <body>
+  <body ng-controller="PageController">
     <h2>Tool box options features testing</h2>
 
-    <div class="main-area" ng-controller="FirstController">    
+    <div class="main-area">    
       <p>{{mode}}</p>
       <button ng-click="switchMode()">Switch mode</button>
 
       <div class="button-widget">
-        <button class="button-one {{settings.color}}" ng-click="buttonOneClicked()">BUTTON ONE {{settings.color}}</button>
+        <button id="button-one" button-directive class="button {{button.color}}" ng-click="buttonOneClicked()">Button One {{button.color}}</button>
       </div>
 
-      <div class="info-widget {{settings.fontStyle}}" ng-click="infoWidgetClicked()">
+      <div class="button-widget">
+        <button id="button-two" button-directive class="button {{button.color}}" ng-click="buttonTwoClicked()">Button Two {{button.color}}</button>
+      </div>
+
+      <!-- <div class="info-widget {{settings.fontStyle}}" ng-click="infoWidgetClicked()">
         <p>Information goes here...</p>
-      </div> 
+      </div> --> 
     </div>
 
-    <div class="settings-area" ng-controller="SecondController">
+    <div class="settings-area">
       <p>Settings goes here...</p>
 
       <!-- {{rslt.templateName}} -->

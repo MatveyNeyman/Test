@@ -14,17 +14,17 @@
 	padding: 10px;
 }
 
-.button-one {
+.button {
 	margin-top: 30px;
 	width: 100px;
 	height: 50px;
 }
 
-.button-one.green {
+.button.green {
 	background-color:green;
 }
 
-.button-one.blue {
+.button.blue {
 	background-color:blue;
 }
 
